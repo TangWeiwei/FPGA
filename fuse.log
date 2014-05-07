@@ -1,0 +1,38 @@
+Running: D:\ise\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o D:/FPGA/RISC/top_tb_isim_beh.exe -prj D:/FPGA/RISC/top_tb_beh.prj work.top_tb work.glbl 
+ISim O.87xd (signature 0x2f00eba5)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Analyzing Verilog file "D:/FPGA/RISC/../src/rf_imux.v" into library work
+Analyzing Verilog file "D:/FPGA/RISC/../src/registers.v" into library work
+Analyzing Verilog file "D:/FPGA/RISC/../src/alu_inmax.v" into library work
+Analyzing Verilog file "D:/FPGA/RISC/../src/alu.v" into library work
+Analyzing Verilog file "D:/FPGA/RISC/../src/SRISC_32.v" into library work
+Analyzing Verilog file "D:/FPGA/RISC/../src/imem.v" into library work
+Analyzing Verilog file "D:/FPGA/RISC/../src/dmem.v" into library work
+Analyzing Verilog file "D:/FPGA/RISC/../src/bus.v" into library work
+Analyzing Verilog file "D:/FPGA/RISC/../src/top.v" into library work
+Analyzing Verilog file "D:/FPGA/RISC/../src/top_tb.v" into library work
+Analyzing Verilog file "D:/ise/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:97 - "D:/FPGA/RISC/../src/alu.v" Line 34: o_alu_ret was previously declared with a different range
+Completed static elaboration
+Fuse Memory Usage: 104580 KB
+Fuse CPU Usage: 280 ms
+Compiling module rf_imux
+Compiling module registers
+Compiling module alu_inmax
+Compiling module alu
+Compiling module SRISC_32
+Compiling module imem
+Compiling module bus
+Compiling module dmem
+Compiling module top
+Compiling module top_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 8 sub-compilation(s) to finish...
+Compiled 11 Verilog Units
+Built simulation executable D:/FPGA/RISC/top_tb_isim_beh.exe
+Fuse Memory Usage: 109172 KB
+Fuse CPU Usage: 374 ms

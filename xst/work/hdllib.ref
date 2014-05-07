@@ -1,0 +1,9 @@
+MO dmem NULL ../src/dmem.v vlg5F/dmem.bin 1398775218
+MO rf_imux NULL ../src/rf_imux.v vlg3A/rf__imux.bin 1398775218
+MO imem NULL ../src/imem.v vlg50/imem.bin 1398775218
+MO bus NULL ../src/bus.v vlg4E/bus.bin 1398775218
+MO SRISC_32 NULL ../src/SRISC_32.v vlg68/_s_r_i_s_c__32.bin 1398775218
+MO top NULL ../src/top.v vlg6F/top.bin 1398775218
+MO registers NULL ../src/registers.v vlg40/registers.bin 1398775218
+MO alu NULL ../src/alu.v vlg0A/alu.bin 1398775218
+MO alu_inmax NULL ../src/alu_inmax.v vlg16/alu__inmax.bin 1398775218

@@ -1,0 +1,1128 @@
+Release 13.4 - xst O.87xd (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../src/rf_imux.v" in library work
+Compiling verilog include file "../src/param.v"
+Compiling verilog file "../src/registers.v" in library work
+Compiling verilog include file "../src/param.v"
+Module <rf_imux> compiled
+Compiling verilog file "../src/alu_inmax.v" in library work
+Compiling verilog include file "../src/param.v"
+Module <registers> compiled
+Compiling verilog file "../src/alu.v" in library work
+Compiling verilog include file "../src/param.v"
+Module <alu_inmax> compiled
+Compiling verilog file "../src/SRISC_32.v" in library work
+Compiling verilog include file "../src/param.v"
+Module <alu> compiled
+Compiling verilog file "../src/imem.v" in library work
+Compiling verilog include file "../src/param.v"
+Module <SRISC_32> compiled
+Compiling verilog file "../src/dmem.v" in library work
+Compiling verilog include file "../src/param.v"
+Module <imem> compiled
+Compiling verilog file "../src/bus.v" in library work
+Compiling verilog include file "../src/param.v"
+Module <dmem> compiled
+Compiling verilog file "../src/top.v" in library work
+Compiling verilog include file "../src/param.v"
+Module <bus> compiled
+Module <top> compiled
+WARNING:HDLCompilers:258 - "../src/alu.v" line 34 Range on redeclaration of 'o_alu_ret' overrides range on output declaration at "../src/alu.v" line 24 
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work>.
+
+Analyzing hierarchy for module <SRISC_32> in library <work>.
+
+Analyzing hierarchy for module <imem> in library <work>.
+
+Analyzing hierarchy for module <bus> in library <work>.
+
+Analyzing hierarchy for module <dmem> in library <work>.
+
+Analyzing hierarchy for module <rf_imux> in library <work>.
+
+Analyzing hierarchy for module <registers> in library <work>.
+
+Analyzing hierarchy for module <alu_inmax> in library <work>.
+
+Analyzing hierarchy for module <alu> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+WARNING:Xst:852 - "../src/top.v" line 68: Unconnected input port 'i_s2d' of instance 'U_bus' is tied to GND.
+Module <top> is correct for synthesis.
+ 
+Analyzing module <SRISC_32> in library <work>.
+Module <SRISC_32> is correct for synthesis.
+ 
+Analyzing module <rf_imux> in library <work>.
+Module <rf_imux> is correct for synthesis.
+ 
+Analyzing module <registers> in library <work>.
+Module <registers> is correct for synthesis.
+ 
+Analyzing module <alu_inmax> in library <work>.
+Module <alu_inmax> is correct for synthesis.
+ 
+Analyzing module <alu> in library <work>.
+Module <alu> is correct for synthesis.
+ 
+Analyzing module <imem> in library <work>.
+Module <imem> is correct for synthesis.
+ 
+Analyzing module <bus> in library <work>.
+Module <bus> is correct for synthesis.
+ 
+Analyzing module <dmem> in library <work>.
+Module <dmem> is correct for synthesis.
+ 
+    Set property "ram_style = block" for signal <mem>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <imem>.
+    Related source file is "../src/imem.v".
+    Found 256x32-bit ROM for signal <o_d$mux0001>.
+    Found 32-bit register for signal <o_d>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred  32 D-type flip-flop(s).
+Unit <imem> synthesized.
+
+
+Synthesizing Unit <bus>.
+    Related source file is "../src/bus.v".
+    Found 32-bit 4-to-1 multiplexer for signal <o_md>.
+    Found 1-bit register for signal <s1sel_r>.
+    Found 1-bit register for signal <s2sel_r>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+	inferred  32 Multiplexer(s).
+Unit <bus> synthesized.
+
+
+Synthesizing Unit <dmem>.
+    Related source file is "../src/dmem.v".
+    Found 4096x32-bit single-port RAM <Mram_mem> for signal <mem>.
+    Found 32-bit register for signal <o_d>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  32 D-type flip-flop(s).
+Unit <dmem> synthesized.
+
+
+Synthesizing Unit <rf_imux>.
+    Related source file is "../src/rf_imux.v".
+WARNING:Xst:1780 - Signal <rsrc2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <rsrc1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <rf_imux> synthesized.
+
+
+Synthesizing Unit <registers>.
+    Related source file is "../src/registers.v".
+    Found 16x32-bit dual-port RAM <Mram_reg_stack> for signal <reg_stack>.
+    Found 16x32-bit dual-port RAM <Mram_reg_stack_ren> for signal <reg_stack>.
+    Found 32-bit register for signal <o_rd2>.
+    Found 32-bit register for signal <o_rd1>.
+    Summary:
+	inferred   2 RAM(s).
+	inferred  64 D-type flip-flop(s).
+Unit <registers> synthesized.
+
+
+Synthesizing Unit <alu_inmax>.
+    Related source file is "../src/alu_inmax.v".
+Unit <alu_inmax> synthesized.
+
+
+Synthesizing Unit <alu>.
+    Related source file is "../src/alu.v".
+    Register <o_alu_greater> equivalent to <o_alu_above> has been removed
+    Found 1-bit register for signal <o_alu_above>.
+    Found 1-bit register for signal <o_alu_eq>.
+    Found 32-bit register for signal <o_alu_ret>.
+    Found 32-bit comparator greater for signal <o_alu_above$cmp_gt0000> created at line 74.
+    Found 32-bit comparator equal for signal <o_alu_eq$cmp_eq0000> created at line 72.
+    Found 32-bit adder for signal <ret_add>.
+    Found 32-bit shifter logical left for signal <ret_shl>.
+    Found 32-bit shifter logical right for signal <ret_shr>.
+    Found 32-bit subtractor for signal <ret_sub>.
+    Found 32-bit xor2 for signal <ret_xor>.
+    Summary:
+	inferred  34 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <alu> synthesized.
+
+
+Synthesizing Unit <SRISC_32>.
+    Related source file is "../src/SRISC_32.v".
+WARNING:Xst:646 - Signal <rsrc1_r4> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <alu_above_r4>.
+    Found 1-bit register for signal <alu_eq_r4>.
+    Found 1-bit register for signal <alu_greater_r4>.
+    Found 32-bit register for signal <alu_ret_r4>.
+    Found 32-bit register for signal <imm_r2>.
+    Found 32-bit register for signal <imm_r3>.
+    Found 32-bit register for signal <imm_r4>.
+    Found 8-bit register for signal <opcode_r2>.
+    Found 8-bit register for signal <opcode_r3>.
+    Found 8-bit register for signal <opcode_r4>.
+    Found 32-bit up counter for signal <pc>.
+    Found 32-bit adder for signal <pc_jaddr$addsub0000> created at line 225.
+    Found 32-bit register for signal <pc_r1>.
+    Found 32-bit register for signal <pc_r2>.
+    Found 32-bit register for signal <pc_r3>.
+    Found 32-bit register for signal <pc_r4>.
+    Found 4-bit register for signal <rA_r2>.
+    Found 4-bit register for signal <rA_r3>.
+    Found 4-bit register for signal <rA_r4>.
+    Found 32-bit register for signal <rsrc2_r3>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 327 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <SRISC_32> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "../src/top.v".
+WARNING:Xst:646 - Signal <io_d<31:4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <iaddr<31:16>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <dmem_addr<31:12>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 4-bit register for signal <lcd_d>.
+    Found 1-bit register for signal <lcd_e>.
+    Found 1-bit register for signal <lcd_rs>.
+    Found 1-bit register for signal <lcd_rw>.
+    Summary:
+	inferred   7 D-type flip-flop(s).
+Unit <top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 16x32-bit dual-port RAM                               : 2
+ 4096x32-bit single-port RAM                           : 1
+# ROMs                                                 : 1
+ 256x32-bit ROM                                        : 1
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 2
+ 32-bit subtractor                                     : 1
+# Counters                                             : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 31
+ 1-bit register                                        : 10
+ 32-bit register                                       : 14
+ 4-bit register                                        : 4
+ 8-bit register                                        : 3
+# Comparators                                          : 2
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 1
+ 32-bit 4-to-1 multiplexer                             : 1
+# Logic shifters                                       : 2
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+# Xors                                                 : 1
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <dmem>.
+INFO:Xst:3226 - The RAM <Mram_mem> will be implemented as a BLOCK RAM, absorbing the following register(s): <o_d>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4096-word x 32-bit                  |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     enA            | connected to signal <i_en_0>        | high     |
+    |     weA            | connected to signal <i_we>          | high     |
+    |     addrA          | connected to signal <i_addr>        |          |
+    |     diA            | connected to signal <i_d>           |          |
+    |     doA            | connected to signal <o_d>           |          |
+    |     dorstA         | connected to signal <rst>           | high     |
+    | reset value        | 00000000000000000000000000000000               |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <dmem> synthesized (advanced).
+
+Synthesizing (advanced) Unit <registers>.
+INFO:Xst:3217 - HDL ADVISOR - Register <o_rd1> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_reg_stack> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <i_we>          | high     |
+    |     addrA          | connected to signal <i_waddr>       |          |
+    |     diA            | connected to signal <i_wd>          |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 16-word x 32-bit                    |          |
+    |     addrB          | connected to signal <i_raddr1>      |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3217 - HDL ADVISOR - Register <o_rd2> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_reg_stack_ren> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <i_we>          | high     |
+    |     addrA          | connected to signal <i_waddr>       |          |
+    |     diA            | connected to signal <i_wd>          |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 16-word x 32-bit                    |          |
+    |     addrB          | connected to signal <i_raddr2>      |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <registers> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 16x32-bit dual-port distributed RAM                   : 2
+ 4096x32-bit single-port block RAM                     : 1
+# ROMs                                                 : 1
+ 256x32-bit ROM                                        : 1
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 2
+ 32-bit subtractor                                     : 1
+# Counters                                             : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 466
+ Flip-Flops                                            : 466
+# Comparators                                          : 2
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 1
+ 32-bit 4-to-1 multiplexer                             : 1
+# Logic shifters                                       : 2
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+# Xors                                                 : 1
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <o_d_26> (without init value) has a constant value of 0 in block <imem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <o_d_27> (without init value) has a constant value of 0 in block <imem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <o_d_30> (without init value) has a constant value of 0 in block <imem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <o_d_31> (without init value) has a constant value of 0 in block <imem>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <top> ...
+WARNING:Xst:1710 - FF/Latch <lcd_rs> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_rw> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_e> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_d_0> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_d_1> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_d_2> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_d_3> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <imem> ...
+
+Optimizing unit <registers> ...
+
+Optimizing unit <alu> ...
+
+Optimizing unit <SRISC_32> ...
+WARNING:Xst:2677 - Node <U_bus/s1sel_r> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_bus/s2sel_r> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_dmem/Mram_mem3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_dmem/Mram_mem1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_dmem/Mram_mem2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_dmem/Mram_mem6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_dmem/Mram_mem4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_dmem/Mram_mem5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_dmem/Mram_mem7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_dmem/Mram_mem8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_imem/o_d_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_ret_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_eq> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_alu/o_alu_above> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd1_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/o_rd2_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack32> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/U_rf/Mram_reg_stack_ren32> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_ret_r4_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_eq_r4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_above_r4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/alu_greater_r4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r4_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rsrc2_r3_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r3_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rA_r4_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rA_r4_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rA_r4_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rA_r4_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r4_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r4_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r4_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r4_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r4_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r4_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r4_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r4_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r4_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r2_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r3_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r3_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r3_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r3_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r3_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r3_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r3_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r3_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rA_r3_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rA_r3_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rA_r3_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rA_r3_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r3_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/pc_r1_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/imm_r2_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r2_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r2_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r2_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r2_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r2_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r2_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r2_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/opcode_r2_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rA_r2_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rA_r2_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rA_r2_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <U_SRISC_32/rA_r2_0> of sequential type is unconnected in block <top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 9
+
+Cell Usage :
+# BELS                             : 1
+#      GND                         : 1
+# IO Buffers                       : 7
+#      OBUF                        : 7
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                        0  out of   4656     0%  
+ Number of IOs:                           9
+ Number of bonded IOBs:                   7  out of    232     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 13.26 secs
+ 
+--> 
+
+Total memory usage is 217288 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  579 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+
